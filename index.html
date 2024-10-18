@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Shirt Order Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <img src="LogosforShirt.jpg" alt="Company Logo" class="logo">
+        <h1>Welcome to Custom Tee!!</h1>
+        <nav>
+            <ul>
+                <li><a href="https://facebook.com">Facebook</a></li>
+                <li><a href="https://instagram.com">Instagram</a></li>
+                <li><a href="https://twitter.com">Twitter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <section>
+        <!-- Video Section -->
+        <article>
+            <h2>Watch Our Promotional Video</h2>
+            <video controls style="width: 100%; max-width: 600px; margin: 20px auto; display: block;">
+                <source src="tshirt video.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </article>
+
+        <article>
+            <h2>T-Shirt Order Form</h2>
+            <form id="tshirtOrderForm" onsubmit="return validateForm()">
+                <label for="name">Full Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="message">Message on T-Shirt:</label><br>
+                <textarea id="message" name="message" maxlength="50" required></textarea><br>
+                <span id="messageError" class="error"></span><br>
+
+                <label for="color">Select Color:</label><br>
+                <select id="color" name="color" required>
+                    <option value="">--Select Color--</option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                </select><br><br>
+
+                <label for="quantity">Quantity:</label><br>
+                <input type="number" id="quantity" name="quantity" min="1" max="100" required><br><br>
+
+                <label for="mobile">Mobile Number (9 digits):</label><br>
+                <input type="text" id="mobile" name="mobile" required><br>
+                <span id="mobileError" class="error"></span><br><br>
+
+                <input type="submit" value="Submit Order">
+            </form>
+        </article>
+
+        <!-- Receipt Section (Hidden Initially) -->
+        <div id="receipt" style="display: none;">
+            <h2>Order Confirmation</h2>
+            <p>Thank you for your order, <strong id="receiptName"></strong>!</p>
+            <p>Your message: "<strong id="receiptMessage"></strong>" will be printed on your T-Shirt.</p>
+            <p>Selected Color: <strong id="receiptColor"></strong></p>
+            <p>Quantity: <strong id="receiptQuantity"></strong></p>
+            <p>We will contact you at <strong id="receiptMobile"></strong> for confirmation.</p>
+        </div>
+
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Custom Tee!! T-Shirts | All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
